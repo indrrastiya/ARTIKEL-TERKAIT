@@ -1,1 +1,61 @@
-<!DOCTYPE html><HTML dir='ltr' lang='id-ID'><head><meta charset='utf-8'/><title>CHORD TERKAIT</title><style>*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Roboto","Segoe UI","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif}body li,body ul{margin:0;float:left}body li{list-style-type:none!important;display:inline;line-height:1em;width:100%;border-bottom:1px solid #d7d7d7;padding:5px 0}body ul{padding:0}span.news-text{font-size:12px;color:#666;line-height:0.5em}body ul li a{text-decoration:none;display:block;color:#000;transition:all .2s ease;font-weight:500;line-height:1em}body ul li:hover a.relinkjdulx{color:#2962ff}.relinkjdulx{font-size:12px;margin-bottom:5px}@media only screen and (max-width:600px){span.news-text{display:none}}</style></head><body><ul><script>function getQueryVariable(r){for(var l=window.location.search.substring(1).split("&"),e=0;e<l.length;e++){var t=l[e].split("=");if(t[0]==r)return t[1]}return!1}function saringtags(r,l){for(var e=r.split("<"),t=0;t<e.length;t++)-1!=e[t].indexOf(">")&&(e[t]=e[t].substring(e[t].indexOf(">")+1,e[t].length));return e=e.join(""),e=e.substring(0,l-1)}var simg=getQueryVariable("si"),rsimg=(simg==false)?"/s72-c/":"/"+simg+"/";function relpostimgcuplik(r){for(var l=0;l<r.feed.entry.length;l++){var e=r.feed.entry[l];reljudul[relnojudul]=e.title.$t,postcontent="","content"in e?postcontent=e.content.$t:"summary"in e&&(postcontent=e.summary.$t),relcuplikan[relnojudul]=saringtags(postcontent,numchars),relgambar[relnojudul]=postimg;for(var t=0;t<e.link.length;t++)if("alternate"==e.link[t].rel){relurls[relnojudul]=e.link[t].href;break}relnojudul++}}function contains(r,l){for(var e=0;e<r.length;e++)if(r[e]==l)return!0;return!1}function artikelterkait(){for(var r=new Array(0),l=new Array(0),e=new Array(0),t=new Array(0),a=0;a<relurls.length;a++)contains(r,relurls[a])||(r.length+=1,r[r.length-1]=relurls[a],l.length+=1,l[l.length-1]=reljudul[a],e.length+=1,e[e.length-1]=relcuplikan[a],t.length+=1,t[t.length-1]=relgambar[a]);for(reljudul=l,relurls=r,relcuplikan=e,relgambar=t,a=0;a<reljudul.length;a++){var n=Math.floor((reljudul.length-1)*Math.random()),u=reljudul[a],i=relurls[a],s=relcuplikan[a],o=relgambar[a];reljudul[a]=reljudul[n],relurls[a]=relurls[n],relcuplikan[a]=relcuplikan[n],relgambar[a]=relgambar[n],reljudul[n]=u,relurls[n]=i,relcuplikan[n]=s,relgambar[n]=o}for(var g,c=0,p=Math.floor((reljudul.length-1)*Math.random()),m=p,d=getQueryVariable("pos");c<relmaxtampil&&(relurls[p]==d||(g="<li class='news-title'>",g+="<a href='"+relurls[p]+"' rel='nofollow' target='_blank' title='"+reljudul[p]+"'><img src='"+relgambar[p]+"' /></a>",g+="<a class='relinkjdulx' href='"+relurls[p]+"' target='_blank'>"+reljudul[p]+"</a>",g+="<span class='news-text'>"+relcuplikan[p]+" ... </span>",g+="</li>",document.write(g),++c!=relmaxtampil))&&(p<reljudul.length-1?p++:p=0,p!=m););}for(var labels=getQueryVariable("labels"),relmaxtampil=getQueryVariable("num"),url=getQueryVariable("url"),hostname=(url==false)?"https://sworochord.blogspot.com":url,res=labels.split(","),i=0,text="";res[i];)text+='<script src="'+hostname+"/feeds/posts/default/-/"+res[i]+'?alt=json&amp;callback=relpostimgcuplik&amp;max-results=5"><\/script>',i++;var relnojudul=0,numchars=120,reljudul=new Array,relurls=new Array,relcuplikan=new Array,relgambar=new Array;document.write(text+'<script>artikelterkait();<\/script>');</script></ul></body></HTML>
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset='utf-8'/>
+	<meta content='width=device-width,minimum-scale=1,initial-scale=1' name='viewport'/>
+	<title>Recent Post</title>
+<style>
+body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Roboto","Segoe UI","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif;overflow:hidden}
+#recentpostnav{border:1px solid #585858;width:100%;margin:0 auto}
+#recentpost{margin:0;background:#fff;}
+.recentpostel{background:#fff;display:block;border-bottom:1px solid #000;margin:0 0 5px;padding:1px 0 6px;height:auto}
+.recentpostel:last-child{margin:0;border-bottom:none;}
+.recentpostel h6,.recentpostel h6 a{text-decoration:none;font-size:12px;font-weight:600;line-height:1.2;margin:0;color:#6703ff}
+.recentpostel h6:hover a {color:#6703ff}
+.recentpostel h6:hover {padding-left:5px}
+#recentpostnavfeed{background:#eee;text-align:center;margin:0}
+#recentpostnavfeed a{text-decoration:none;display:block;padding:5px}
+#recentpostnavfeed span{padding:5px}
+#recentpostnavfeed .next{float:right}
+#recentpostnavfeed .previous{float:left}
+#recentpostnavfeed .home{text-align:center;display:inline-block;}
+#recentpostnavfeed svg{vertical-align:middle;}
+</style>
+
+  </head>
+
+  <body>
+	<div class="box" id="box">
+	  <div id="recentpost"></div>
+	  <div id="recentpostnavfeed"></div>
+	</div>
+<script>
+function getQueryVariable(variable) {
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+    if(pair[0] == variable){return pair[1];}
+  }
+  return(false);
+}
+  function generateCss(q) {
+    var css       = document.createElement('style'),
+        sp2       = document.getElementById('box'),
+        parentDiv = sp2.parentNode;
+    css.type = 'text/css';
+    if (css.styleSheet) css.styleSheet.cssText = q;
+    else css.appendChild(document.createTextNode(q));
+    parentDiv.insertBefore(css, sp2);
+  }
+    (function() {
+    var q = '.recentpostel h6 a {font-size:' + getQueryVariable('fontSize') + ';color:#' + getQueryVariable('color') + '}';
+        generateCss(q);
+  })();
+</script>
+<script>
+var urlblog = getQueryVariable("url");
+function bloggerfeed(e,t){for(var n=e.split("<"),r=0;r<n.length;r++)-1!=n[r].indexOf(">")&&(n[r]=n[r].substring(n[r].indexOf(">")+1,n[r].length));return n=n.join(""),n=n.substring(0,t-1)}function showrecentpost(e){var t,n,r,a,i,s="";urlprevious="",urlnext="";for(var l=0;l<e.feed.link.length;l++)"previous"==e.feed.link[l].rel&&(urlprevious=e.feed.link[l].href),"next"==e.feed.link[l].rel&&(urlnext=e.feed.link[l].href);for(var d=0;d<5&&d!=e.feed.entry.length;d++){t=e.feed.entry[d],n=t.title.$t;for(var l=0;l<t.link.length;l++)if("alternate"==t.link[l].rel){r=t.link[l].href;break}i="content"in t?t.content.$t:"summary"in t?t.summary.$t:"",a="media$thumbnail"in t?t.media$thumbnail.url:"https://3.bp.blogspot.com/-BHuXHny1kOk/VXrkSyxKCjI/AAAAAAAACas/pZLJAEUDtds/s72/no-image.png",s+="<div class='recentpostel'>",s+="<a href='"+r+"' target='_blank' title='"+n+"'></a>",s+="<h6><a href='"+r+"' target='_blank' title='"+n+"'>"+n+"</a></h6>",s+="</div>"}document.getElementById("recentpost").innerHTML=s,s="",s+=urlprevious?"<a href='javascript:navigasifeed(-1);' class='previous' title='Previous'><svg width='24' height='24' viewBox='0 0 24 24'><path fill='#333333' d='M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z' /></svg></a>":"<span class='noactived previous'><svg width='24' height='24' viewBox='0 0 24 24'><path fill='#777777' d='M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z' /></svg></span>",s+=urlnext?"<a href='javascript:navigasifeed(1);' class='next' title='Next'><svg width='24' height='24' viewBox='0 0 24 24'><path fill='#333333' d='M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z' /></svg></a>":"<span class='noactived next'><svg width='24' height='24' viewBox='0 0 24 24'><path fill='#777777' d='M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z' /></svg></span>",s+="<a href='javascript:navigasifeed(0);' class='home' title='Home'><svg width='24' height='24' viewBox='0 0 24 24'><path fill='#141414' d='M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z' /></svg></a>",document.getElementById("recentpostnavfeed").innerHTML=s}function navigasifeed(e){var t,n;-1==e?(t=urlprevious.indexOf("?"),n=urlprevious.substring(t)):1==e?(t=urlnext.indexOf("?"),n=urlnext.substring(t)):n="?start-index=1&max-results=5&orderby=published&alt=json-in-script",n+="&callback=showrecentpost",incluirscript(n)}function incluirscript(e){1==0&&removerscript(),document.getElementById("recentpost").innerHTML="<div id='recentpostload'></div>",document.getElementById("recentpostnavfeed").innerHTML="";var t=urlblog+"/feeds/posts/default"+e,n=document.createElement("script");n.setAttribute("type","text/javascript"),n.setAttribute("src",t),n.setAttribute("id","postlabel"),document.getElementsByTagName("head")[0].appendChild(n),startfeed=1}function removerscript(){var e=document.getElementById("postlabel"),t=e.parentNode;t.removeChild(e)}onload=function(){navigasifeed(0)};
+</script>
+  </body>
+</html>
