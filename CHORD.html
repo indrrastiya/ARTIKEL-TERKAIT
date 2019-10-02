@@ -2,20 +2,20 @@
 <meta content='width=device-width,minimum-scale=1,initial-scale=1' name='viewport'/>
 <title>Chord Terkait</title>
 <style>/*<![CDATA[*/
-body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Roboto","Segoe UI","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif;overflow:hidden}
+body{margin:0;padding:0;overflow:hidden}
 #recentpostnav{border:1px solid #585858;width:100%;margin:0 auto}
 #recentpost{margin:0;background:#fff;}
 .recentpostel{background:#fff;display:block;border-bottom:1px solid #000;margin:0 0 5px;padding:1px 0 6px;height:auto}
 .recentpostel:last-child{margin:0;border-bottom:none;}
 .recentpostel h6,.recentpostel h6 a{text-decoration:none;font-size:12px;font-weight:600;line-height:1.2;margin:0;color:#C26E7C}
-.recentpostel h6:hover a {color:#4865B8}
+.recentpostel h6:hover a {color:#000000}
 .recentpostel h6:hover {padding-left:5px}
 #recentpostnavfeed{background:#E4E6F1;text-align:center;margin:0}
 #recentpostnavfeed a{text-decoration:none;display:block;padding:5px}
 #recentpostnavfeed span{padding:5px}
 #recentpostnavfeed .next{float:right}
 #recentpostnavfeed .previous{float:left}
-#recentpostnavfeed .home{text-align:center;display:inline-block;margin-top:5px;}
+#recentpostnavfeed .home{text-align:center;display:inline-block;}
 #recentpostnavfeed svg{vertical-align:middle;}
 #default_css{display : none !important;}
 a[href^="http://c.ketads.com/"]{display : none !important;}
@@ -46,5 +46,5 @@ function getQueryVariable(variable) {
 </script>
 <script>
 var urlblog = getQueryVariable("url");
-function bloggerfeed(e,t){for(var n=e.split("<"),r=0;r<n.length;r++)-1!=n[r].indexOf(">")&&(n[r]=n[r].substring(n[r].indexOf(">")+1,n[r].length));return n=n.join(""),n=n.substring(0,t-1)}function showrecentpost(e){var t,n,r,a,i,s="";urlprevious="",urlnext="";for(var l=0;l<e.feed.link.length;l++)"previous"==e.feed.link[l].rel&&(urlprevious=e.feed.link[l].href),"next"==e.feed.link[l].rel&&(urlnext=e.feed.link[l].href);for(var d=0;d<5&&d!=e.feed.entry.length;d++){t=e.feed.entry[d],n=t.title.$t;for(var l=0;l<t.link.length;l++)if("alternate"==t.link[l].rel){r=t.link[l].href;break}i="content"in t?t.content.$t:"summary"in t?t.summary.$t:"",s+="<div class='recentpostel'>",s+="<a href='"+r+"' target='_blank' title='"+n+"'></a>",s+="<h6><a href='"+r+"' target='_blank' title='"+n+"'>"+n+"</a></h6>",s+="</div>"}document.getElementById("recentpost").innerHTML=s,s="",s+=urlprevious?"<a href='javascript:navigasifeed(-1);' class='previous' title='Previous'>Prev</a>":"<span class='noactived previous'></span>",s+=urlnext?"<a href='javascript:navigasifeed(1);' class='next' title='Next'>next</a>":"<span class='noactived next'></span>",s+="<a href='javascript:navigasifeed(0);' class='home' title='Home'>home</a>",document.getElementById("recentpostnavfeed").innerHTML=s}function navigasifeed(e){var t,n;-1==e?(t=urlprevious.indexOf("?"),n=urlprevious.substring(t)):1==e?(t=urlnext.indexOf("?"),n=urlnext.substring(t)):n="?start-index=1&max-results=5&orderby=published&alt=json-in-script",n+="&callback=showrecentpost",incluirscript(n)}function incluirscript(e){1==0&&removerscript(),document.getElementById("recentpost").innerHTML="<div id='recentpostload'></div>",document.getElementById("recentpostnavfeed").innerHTML="";var t=urlblog+"/feeds/posts/default"+e,n=document.createElement("script");n.setAttribute("type","text/javascript"),n.setAttribute("src",t),n.setAttribute("id","postlabel"),document.getElementsByTagName("head")[0].appendChild(n),startfeed=1}function removerscript(){var e=document.getElementById("postlabel"),t=e.parentNode;t.removeChild(e)}onload=function(){navigasifeed(0)};
+function bloggerfeed(e,t){for(var n=e.split("<"),r=0;r<n.length;r++)-1!=n[r].indexOf(">")&&(n[r]=n[r].substring(n[r].indexOf(">")+1,n[r].length));return n=n.join(""),n=n.substring(0,t-1)}function showrecentpost(e){var t,n,r,a,i,s="";urlprevious="",urlnext="";for(var l=0;l<e.feed.link.length;l++)"previous"==e.feed.link[l].rel&&(urlprevious=e.feed.link[l].href),"next"==e.feed.link[l].rel&&(urlnext=e.feed.link[l].href);for(var d=0;d<5&&d!=e.feed.entry.length;d++){t=e.feed.entry[d],n=t.title.$t;for(var l=0;l<t.link.length;l++)if("alternate"==t.link[l].rel){r=t.link[l].href;break}i="content"in t?t.content.$t:"summary"in t?t.summary.$t:"",s+="<div class='recentpostel'>",s+="<a href='"+r+"' target='_blank' title='"+n+"'></a>",s+="<h6><a href='"+r+"' target='_blank' title='"+n+"'>"+n+"</a></h6>",s+="</div>"}document.getElementById("recentpost").innerHTML=s,s="",s+=urlprevious?"<a href='javascript:navigasifeed(-1);' class='previous' title='Previous'>kembali</a>":"<span class='noactived previous'></span>",s+=urlnext?"<a href='javascript:navigasifeed(1);' class='next' title='Next'>lanjutkan</a>":"<span class='noactived next'></span>",s+="<a href='javascript:navigasifeed(0);' class='home' title='Home'>Home</a>",document.getElementById("recentpostnavfeed").innerHTML=s}function navigasifeed(e){var t,n;-1==e?(t=urlprevious.indexOf("?"),n=urlprevious.substring(t)):1==e?(t=urlnext.indexOf("?"),n=urlnext.substring(t)):n="?start-index=1&max-results=5&orderby=published&alt=json-in-script",n+="&callback=showrecentpost",incluirscript(n)}function incluirscript(e){1==0&&removerscript(),document.getElementById("recentpost").innerHTML="<div id='recentpostload'></div>",document.getElementById("recentpostnavfeed").innerHTML="";var t=urlblog+"/feeds/posts/default"+e,n=document.createElement("script");n.setAttribute("type","text/javascript"),n.setAttribute("src",t),n.setAttribute("id","postlabel"),document.getElementsByTagName("head")[0].appendChild(n),startfeed=1}function removerscript(){var e=document.getElementById("postlabel"),t=e.parentNode;t.removeChild(e)}onload=function(){navigasifeed(0)};
 </script>
